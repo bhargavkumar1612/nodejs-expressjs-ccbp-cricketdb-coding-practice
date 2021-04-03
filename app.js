@@ -48,7 +48,7 @@ app.get("/players/:playerId/", async (request, response) => {
     cricket_team
     where player_id = ${playerId};
     `;
-  const player = await db.all(getPlayerQuery);
+  const player = await db.get(getPlayerQuery);
   response.send(player);
 });
 
